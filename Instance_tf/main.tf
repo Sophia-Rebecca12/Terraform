@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 resource "aws_instance" "Demo" {
-  ami           = "ami-0142bed01cc1df5f3"
+  ami           = "ami-00b53952597e06220"
   instance_type = "t2.nano"
   key_name = "virtusasystemprivatekey"
   subnet_id = "subnet-016d997f5abe4cb51"
