@@ -41,12 +41,10 @@ jobs:
         
     - name: Checkout
       uses: actions/checkout@v2
-   
-    - name: Change dir
-      run: cd ami_tf
       
     - name: Terraform
       run: |
+        cd ami_tf
         terraform init
         terraform plan
         terraform apply -auto-approve
