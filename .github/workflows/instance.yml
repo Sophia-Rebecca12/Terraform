@@ -44,7 +44,7 @@ jobs:
       
     - name: Terraform
       run: |
-        cd instance_tf
+        cd Instance_tf
         terraform init
         terraform plan
         terraform apply -auto-approve
