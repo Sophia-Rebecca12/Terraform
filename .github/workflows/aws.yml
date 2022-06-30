@@ -18,7 +18,13 @@ jobs:
 
     - name: Checkout
       uses: actions/checkout@v2
-
-    - name: Copy files
-      run: sudo cp -r / /home/jenkins/terraform
+   
+    - name: Change dir
+      run: cd ami_tf
+      
+    - name: Terraform
+      run: |
+        terraform init
+        terraform plan
+        terraform apply -auto-approve
 
