@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@v2
    
     - name: Change dir
-      run: cd ami_tf
+      run: cd /home/jenkins/vcp-data/ami
       
     - name: Terraform
       run: |
