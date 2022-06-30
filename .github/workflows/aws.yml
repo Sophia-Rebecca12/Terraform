@@ -1,14 +1,39 @@
-name: GitHub Pages
-
 on:
   push:
     branches:
     - master
+  
+  release: 
+    types: [created]
+ 
+    
+  
+name: Deploy to Amazon ECS
 
 jobs:
   deploy:
+    name: Deploy-test
     runs-on: ubuntu-latest
+    environment: production
+    
     steps:
+
+    - name: Show Working directory
+      run: pwd  
+
+    - name: Show Working directory
+      run: ls -la  
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+ 
+    - name: Terraform repo checkout
+      uses: actions/checkout@v2  
+      with:
+          repository: Sophia-Rebecca12/Terraform
+          token: ${{ secrets.MY_PAT }}
+
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
